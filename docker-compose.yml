@@ -1,0 +1,20 @@
+version: '3'
+services:
+  microblog:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - /var/lib/docker/volumes/mb_v/_data:/db
+  fake_email:
+    image: "fake_email"
+    container_name: microblog_fake_email
+    ports:
+      - "8025:8025"
+  elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:7.6.1"
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
