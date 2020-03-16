@@ -1,0 +1,4 @@
+- in vagrantfile: config.vm.network "private_network", ip: "192.168.33.11"
+   (error bei vagrant up: re-install or update virtualbox)
+- install gunicorn & nginx
+- gunicorn: using -b 0.0.0.0:<port> instead of localhost!

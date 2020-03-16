@@ -24,7 +24,7 @@ RUN mkdir ./db
 RUN flask db init --directory db/migrations
 RUN flask db migrate --directory db/migrations -m "DB"
 RUN flask db upgrade --directory db/migrations
-ENV MAIL_SERVER microblog_fake_email
+ENV MAIL_SERVER fake_email
 ENV MAIL_PORT 8025
 ENV ELASTICSEARCH_URL http://elasticsearch:9200
 #CMD flask run --host=0.0.0.0
