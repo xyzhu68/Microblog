@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-05 15:15+0000\n"
+"POT-Creation-Date: 2020-03-20 15:27+0000\n"
 "PO-Revision-Date: 2020-03-02 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app/__init__.py:19
+#: app/__init__.py:20
 msgid "Please log in to access this page."
 msgstr "Bitte einloggen, um auf diese Seite zu erlangen."
 
@@ -123,7 +123,7 @@ msgstr "Der Administrator ist informiert. Entschüldigen für die Unbequemlichke
 msgid "About me"
 msgstr "Über mich"
 
-#: app/main/forms.py:13 app/main/forms.py:27
+#: app/main/forms.py:13 app/main/forms.py:27 app/main/forms.py:41
 msgid "Submit"
 msgstr "einreichen"
 
@@ -134,6 +134,10 @@ msgstr "Sagen etwas"
 #: app/main/forms.py:30 app/main/routes.py:132
 msgid "Search"
 msgstr "Suche"
+
+#: app/main/forms.py:40
+msgid "Message"
+msgstr "Nachricht"
 
 #: app/main/routes.py:35
 msgid "Your post is now live!"
@@ -170,36 +174,48 @@ msgstr "Sie können sich selbst nicht unfolgen!"
 msgid "You are not following %(username)s."
 msgstr "Sie folgen %(username)s nicht mehr."
 
-#: app/templates/_post.html:14
+#: app/main/routes.py:151
+msgid "Your message has been sent."
+msgstr "Ihre Nachrichten wurden bereits gesendet."
+
+#: app/main/routes.py:153
+msgid "Send Message"
+msgstr "Nachrichten senden"
+
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s sagte %(when)s"
 
-#: app/templates/_post.html:24
+#: app/templates/_post.html:26
 msgid "Translate"
 msgstr "Übersetzen"
 
-#: app/templates/base.html:24
+#: app/templates/base.html:66
 msgid "Welcome to Microblog"
 msgstr "Willkommen zu Microblog"
 
-#: app/templates/base.html:41
+#: app/templates/base.html:83
 msgid "Home"
 msgstr "Home"
 
-#: app/templates/base.html:42
+#: app/templates/base.html:84
 msgid "Explore"
 msgstr "Erkunden"
 
-#: app/templates/base.html:53
+#: app/templates/base.html:95
 msgid "Login"
 msgstr "Einloggen"
 
-#: app/templates/base.html:55
+#: app/templates/base.html:99 app/templates/messages.html:4
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: app/templates/base.html:102
 msgid "Profile"
 msgstr "Profil"
 
-#: app/templates/base.html:56
+#: app/templates/base.html:103
 msgid "Logout"
 msgstr "Ausloggen"
 
@@ -212,13 +228,21 @@ msgstr "Profil editieren"
 msgid "Hi, %(username)s"
 msgstr "Hallo, %(username)s"
 
-#: app/templates/index.html:28 app/templates/user.html:29
+#: app/templates/index.html:28 app/templates/user.html:36
 msgid "Newer posts"
 msgstr "neuere Post"
 
-#: app/templates/index.html:33 app/templates/user.html:34
+#: app/templates/index.html:33 app/templates/user.html:41
 msgid "Older posts"
 msgstr "Ältere Post"
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr "Neuere Nachrichten"
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr "Ältere Nachrichten"
 
 #: app/templates/search.html:4
 msgid "Search Results"
@@ -231,6 +255,11 @@ msgstr "Vorherige Sucheergebnisse"
 #: app/templates/search.html:18
 msgid "Next results"
 msgstr "Nächste Sucheergebnisse"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "Die Nachricht zu %(recipient)s senden"
 
 #: app/templates/user.html:8
 #, python-format
@@ -251,9 +280,29 @@ msgstr ""
 msgid "Edit your profile"
 msgstr "Ihr Profil editieren"
 
-#: app/templates/user.html:15
+#: app/templates/user.html:15 app/templates/user_popup.html:21
 msgid "Follow"
 msgstr "Folgen"
 
+#: app/templates/user.html:22
+msgid "Send private message"
+msgstr "Private Nachrichten senden"
 
+#: app/templates/user_popup.html:13
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user_popup.html:16
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user_popup.html:17
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user_popup.html:25
+msgid "Unfollow"
+msgstr ""
 

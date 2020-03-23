@@ -20,9 +20,11 @@ COPY *.py /
 COPY app/ app/
 ENV FLASK_APP microblog.py
 RUN mkdir ./db
-#USER root
-RUN flask db init --directory db/migrations
-RUN flask db migrate --directory db/migrations -m "DB"
+RUN mkdir ./db/migrations
+COPY ./db/migrations ./db/migrations
+#RUN flask db init --directory db/migrations
+RUN flask db stamp head --directory db/migrations
+RUN flask db migrate --directory db/migrations
 RUN flask db upgrade --directory db/migrations
 ENV MAIL_SERVER fake_email
 ENV MAIL_PORT 8025
