@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-20 15:27+0000\n"
+"POT-Creation-Date: 2020-03-25 09:16+0000\n"
 "PO-Revision-Date: 2020-03-02 15:40+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:22
 msgid "Please log in to access this page."
 msgstr "Bitte einloggen, um auf diese Seite zu erlangen."
 
@@ -131,7 +131,7 @@ msgstr "einreichen"
 msgid "Say something"
 msgstr "Sagen etwas"
 
-#: app/main/forms.py:30 app/main/routes.py:132
+#: app/main/forms.py:30 app/main/routes.py:133
 msgid "Search"
 msgstr "Suche"
 
@@ -139,48 +139,56 @@ msgstr "Suche"
 msgid "Message"
 msgstr "Nachricht"
 
-#: app/main/routes.py:35
+#: app/main/routes.py:36
 msgid "Your post is now live!"
 msgstr "Ihr Post ist nun live!"
 
-#: app/main/routes.py:66
+#: app/main/routes.py:67
 msgid "Your changes have been saved."
 msgstr "Ihre Änderungen sind gespeichert."
 
-#: app/main/routes.py:78
+#: app/main/routes.py:79
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Benutzername %(username)s kann nicht gefunden werden."
 
-#: app/main/routes.py:81
+#: app/main/routes.py:82
 msgid "You cannot follow yourself!"
 msgstr "Sie können sich selbst nicht folgen!"
 
-#: app/main/routes.py:85
+#: app/main/routes.py:86
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Sie folgen %(username)s!"
 
-#: app/main/routes.py:93
+#: app/main/routes.py:94
 msgid "User %(username) not found."
 msgstr "Benutzername %(username)s kann nicht gefunden werden"
 
-#: app/main/routes.py:96
+#: app/main/routes.py:97
 msgid "You cannot unfollow yourself!"
 msgstr "Sie können sich selbst nicht unfolgen!"
 
-#: app/main/routes.py:100
+#: app/main/routes.py:101
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Sie folgen %(username)s nicht mehr."
 
-#: app/main/routes.py:151
+#: app/main/routes.py:153
 msgid "Your message has been sent."
 msgstr "Ihre Nachrichten wurden bereits gesendet."
 
-#: app/main/routes.py:153
+#: app/main/routes.py:155
 msgid "Send Message"
 msgstr "Nachrichten senden"
+
+#: app/main/routes.py:191
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:193
+msgid "Exporting posts..."
+msgstr ""
 
 #: app/templates/_post.html:16
 #, python-format
@@ -191,31 +199,31 @@ msgstr "%(username)s sagte %(when)s"
 msgid "Translate"
 msgstr "Übersetzen"
 
-#: app/templates/base.html:66
+#: app/templates/base.html:97
 msgid "Welcome to Microblog"
 msgstr "Willkommen zu Microblog"
 
-#: app/templates/base.html:83
+#: app/templates/base.html:114
 msgid "Home"
 msgstr "Home"
 
-#: app/templates/base.html:84
+#: app/templates/base.html:115
 msgid "Explore"
 msgstr "Erkunden"
 
-#: app/templates/base.html:95
+#: app/templates/base.html:126
 msgid "Login"
 msgstr "Einloggen"
 
-#: app/templates/base.html:99 app/templates/messages.html:4
+#: app/templates/base.html:130 app/templates/messages.html:4
 msgid "Messages"
 msgstr "Nachrichten"
 
-#: app/templates/base.html:102
+#: app/templates/base.html:139
 msgid "Profile"
 msgstr "Profil"
 
-#: app/templates/base.html:103
+#: app/templates/base.html:140
 msgid "Logout"
 msgstr "Ausloggen"
 
@@ -228,11 +236,11 @@ msgstr "Profil editieren"
 msgid "Hi, %(username)s"
 msgstr "Hallo, %(username)s"
 
-#: app/templates/index.html:28 app/templates/user.html:36
+#: app/templates/index.html:28 app/templates/user.html:43
 msgid "Newer posts"
 msgstr "neuere Post"
 
-#: app/templates/index.html:33 app/templates/user.html:41
+#: app/templates/index.html:33 app/templates/user.html:48
 msgid "Older posts"
 msgstr "Ältere Post"
 
@@ -280,17 +288,21 @@ msgstr ""
 msgid "Edit your profile"
 msgstr "Ihr Profil editieren"
 
-#: app/templates/user.html:15 app/templates/user_popup.html:21
+#: app/templates/user.html:17
+msgid "Export your posts"
+msgstr "Post exportieren"
+
+#: app/templates/user.html:22 app/templates/user_popup.html:21
 msgid "Follow"
 msgstr "Folgen"
 
-#: app/templates/user.html:22
+#: app/templates/user.html:29
 msgid "Send private message"
 msgstr "Private Nachrichten senden"
 
 #: app/templates/user_popup.html:13
 msgid "Last seen on"
-msgstr ""
+msgstr "Zuletzt gesehen"
 
 #: app/templates/user_popup.html:16
 #, python-format

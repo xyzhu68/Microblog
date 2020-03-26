@@ -16,5 +16,5 @@ class Config(object):
     ADMINS = ['your-email@example.com']
     LANGUAGES = ['en', 'de']
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
-
     POSTS_PER_PAGE = 3
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'

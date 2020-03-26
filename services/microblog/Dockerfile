@@ -16,6 +16,7 @@ RUN pip install googletrans
 RUN pip install flask-babel
 RUN pip install elasticsearch
 RUN pip install gunicorn
+RUN pip install rq
 COPY *.py /
 COPY app/ app/
 ENV FLASK_APP microblog.py
@@ -23,11 +24,14 @@ RUN mkdir ./db
 RUN mkdir ./db/migrations
 COPY ./db/migrations ./db/migrations
 #RUN flask db init --directory db/migrations
-RUN flask db stamp head --directory db/migrations
-RUN flask db migrate --directory db/migrations
-RUN flask db upgrade --directory db/migrations
+#RUN flask db stamp head --directory db/migrations
+#RUN flask db migrate --directory db/migrations
+#RUN flask db upgrade --directory db/migrations
 ENV MAIL_SERVER fake_email
 ENV MAIL_PORT 8025
 ENV ELASTICSEARCH_URL http://elasticsearch:9200
+ENV REDIS_URL redis://redis:6379/0
 #CMD flask run --host=0.0.0.0
-CMD gunicorn -b 0.0.0.0:8000 -w 2 microblog:app
+#CMD gunicorn -b 0.0.0.0:8000 -w 2 microblog:app
+COPY boot.sh ./
+ENTRYPOINT ["./boot.sh"]
