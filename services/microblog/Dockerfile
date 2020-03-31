@@ -17,6 +17,7 @@ RUN pip install flask-babel
 RUN pip install elasticsearch
 RUN pip install gunicorn
 RUN pip install rq
+RUN pip install flask-httpauth
 COPY *.py /
 COPY app/ app/
 ENV FLASK_APP microblog.py
